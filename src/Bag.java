@@ -44,4 +44,30 @@ public class Bag {
         return items.toString();
     }
 
+    //new size method
+    public int size(){
+        return items.size();
+    }
+
+    //new merge method
+    public void merge(Bag otherBag){
+        if (otherBag != null){
+            for (String item : otherBag.items){
+                this.add(item);
+            }
+        }
+    }
+
+    // New distinct method
+    public Bag distinct(){
+        Bag result = new Bag();
+        for (String item : items){
+            if (!result.contains(item)){
+                result.add(item);
+            }
+        }
+        return result;
+    }
+
+
 }
